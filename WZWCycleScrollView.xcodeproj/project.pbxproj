@@ -15,6 +15,10 @@
 		B33E4AA81D20D04600963628 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B33E4AA61D20D04600963628 /* LaunchScreen.storyboard */; };
 		B33E4AB31D20D04600963628 /* WZWCycleScrollViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B33E4AB21D20D04600963628 /* WZWCycleScrollViewTests.m */; };
 		B33E4ABE1D20D04600963628 /* WZWCycleScrollViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B33E4ABD1D20D04600963628 /* WZWCycleScrollViewUITests.m */; };
+		B33E4AD01D20D0EF00963628 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B33E4ACC1D20D0EF00963628 /* 1.jpg */; };
+		B33E4AD11D20D0EF00963628 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B33E4ACD1D20D0EF00963628 /* 2.jpg */; };
+		B33E4AD21D20D0EF00963628 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B33E4ACE1D20D0EF00963628 /* 3.jpg */; };
+		B33E4AD31D20D0EF00963628 /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B33E4ACF1D20D0EF00963628 /* 4.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,10 @@
 		B33E4AB91D20D04600963628 /* WZWCycleScrollViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WZWCycleScrollViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B33E4ABD1D20D04600963628 /* WZWCycleScrollViewUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WZWCycleScrollViewUITests.m; sourceTree = "<group>"; };
 		B33E4ABF1D20D04600963628 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B33E4ACC1D20D0EF00963628 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		B33E4ACD1D20D0EF00963628 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
+		B33E4ACE1D20D0EF00963628 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
+		B33E4ACF1D20D0EF00963628 /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +109,7 @@
 		B33E4A971D20D04600963628 /* WZWCycleScrollView */ = {
 			isa = PBXGroup;
 			children = (
+				B33E4ACB1D20D09300963628 /* Images */,
 				B33E4A9B1D20D04600963628 /* AppDelegate.h */,
 				B33E4A9C1D20D04600963628 /* AppDelegate.m */,
 				B33E4A9E1D20D04600963628 /* ViewController.h */,
@@ -138,6 +147,17 @@
 				B33E4ABF1D20D04600963628 /* Info.plist */,
 			);
 			path = WZWCycleScrollViewUITests;
+			sourceTree = "<group>";
+		};
+		B33E4ACB1D20D09300963628 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				B33E4ACC1D20D0EF00963628 /* 1.jpg */,
+				B33E4ACD1D20D0EF00963628 /* 2.jpg */,
+				B33E4ACE1D20D0EF00963628 /* 3.jpg */,
+				B33E4ACF1D20D0EF00963628 /* 4.jpg */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,6 +264,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B33E4AA81D20D04600963628 /* LaunchScreen.storyboard in Resources */,
+				B33E4AD31D20D0EF00963628 /* 4.jpg in Resources */,
+				B33E4AD01D20D0EF00963628 /* 1.jpg in Resources */,
+				B33E4AD11D20D0EF00963628 /* 2.jpg in Resources */,
+				B33E4AD21D20D0EF00963628 /* 3.jpg in Resources */,
 				B33E4AA51D20D04600963628 /* Assets.xcassets in Resources */,
 				B33E4AA31D20D04600963628 /* Main.storyboard in Resources */,
 			);
