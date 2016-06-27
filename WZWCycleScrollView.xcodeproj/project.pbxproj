@@ -19,6 +19,8 @@
 		B33E4AD11D20D0EF00963628 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B33E4ACD1D20D0EF00963628 /* 2.jpg */; };
 		B33E4AD21D20D0EF00963628 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B33E4ACE1D20D0EF00963628 /* 3.jpg */; };
 		B33E4AD31D20D0EF00963628 /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B33E4ACF1D20D0EF00963628 /* 4.jpg */; };
+		B33E4AD71D20D1EE00963628 /* WZWCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = B33E4AD61D20D1EE00963628 /* WZWCycleScrollView.m */; };
+		B33E4ADA1D20D21800963628 /* WZWCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B33E4AD91D20D21800963628 /* WZWCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,10 @@
 		B33E4ACD1D20D0EF00963628 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
 		B33E4ACE1D20D0EF00963628 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
 		B33E4ACF1D20D0EF00963628 /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
+		B33E4AD51D20D1EE00963628 /* WZWCycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZWCycleScrollView.h; sourceTree = "<group>"; };
+		B33E4AD61D20D1EE00963628 /* WZWCycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZWCycleScrollView.m; sourceTree = "<group>"; };
+		B33E4AD81D20D21800963628 /* WZWCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZWCollectionViewCell.h; sourceTree = "<group>"; };
+		B33E4AD91D20D21800963628 /* WZWCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZWCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +115,7 @@
 		B33E4A971D20D04600963628 /* WZWCycleScrollView */ = {
 			isa = PBXGroup;
 			children = (
+				B33E4AD41D20D15E00963628 /* WZWCycleScrollView */,
 				B33E4ACB1D20D09300963628 /* Images */,
 				B33E4A9B1D20D04600963628 /* AppDelegate.h */,
 				B33E4A9C1D20D04600963628 /* AppDelegate.m */,
@@ -158,6 +165,17 @@
 				B33E4ACF1D20D0EF00963628 /* 4.jpg */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		B33E4AD41D20D15E00963628 /* WZWCycleScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				B33E4AD51D20D1EE00963628 /* WZWCycleScrollView.h */,
+				B33E4AD61D20D1EE00963628 /* WZWCycleScrollView.m */,
+				B33E4AD81D20D21800963628 /* WZWCollectionViewCell.h */,
+				B33E4AD91D20D21800963628 /* WZWCollectionViewCell.m */,
+			);
+			path = WZWCycleScrollView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,7 +313,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B33E4AA01D20D04600963628 /* ViewController.m in Sources */,
+				B33E4AD71D20D1EE00963628 /* WZWCycleScrollView.m in Sources */,
 				B33E4A9D1D20D04600963628 /* AppDelegate.m in Sources */,
+				B33E4ADA1D20D21800963628 /* WZWCollectionViewCell.m in Sources */,
 				B33E4A9A1D20D04600963628 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
