@@ -15,6 +15,7 @@
 @property (nonatomic,strong) UICollectionViewFlowLayout * flowLayout;
 @property (nonatomic,assign) NSInteger itemsCount;
 @property (nonatomic,strong) NSTimer * timer;
+@property (nonatomic,strong) UIPageControl * pageControl;
 
 @end
 
@@ -29,6 +30,7 @@ static NSString * cellID = @"cycleCell";
     }
     return self;
 }
+
 
 #pragma mark - 界面及属性初始化
 -(void)setupView{
@@ -46,6 +48,14 @@ static NSString * cellID = @"cycleCell";
     _collectionView.backgroundColor = [UIColor grayColor];
     [_collectionView registerClass:[WZWCollectionViewCell class] forCellWithReuseIdentifier:cellID];
     [self addSubview:_collectionView];
+    
+    //设置pageControl
+    _pageControl = [[UIPageControl alloc]initWithFrame:CGRectMake(10, 170, 100, 20)];
+    _pageControl.currentPage = 0;
+    _pageControl.pageIndicatorTintColor = [UIColor redColor];
+    _pageControl.currentPageIndicatorTintColor = [UIColor greenColor];
+    _pageControl.numberOfPages = 4;
+    [self addSubview:_pageControl];
     
 }
 
@@ -67,7 +77,11 @@ static NSString * cellID = @"cycleCell";
     cycleScrollView.imageStrArr = imageStrArr;
     return cycleScrollView;
 }
-    
+
+-(void)setScrollDirection:(UICollectionViewScrollDirection)scrollDirection{
+    _scrollDirection = scrollDirection;
+    _flowLayout.scrollDirection = scrollDirection;
+}
 
 #pragma mark - 循环滚动
 //启动循环滚动
@@ -93,9 +107,16 @@ static NSString * cellID = @"cycleCell";
 }
 
 -(NSInteger)getCurrentIndex{
-    NSInteger index = (_collectionView.contentOffset.x + _flowLayout.itemSize.width * 0.5)/_flowLayout.itemSize.width;
+    NSInteger index = 0;
+    if (_flowLayout.scrollDirection == UICollectionViewScrollDirectionHorizontal ) {
+        index = (_collectionView.contentOffset.x + _flowLayout.itemSize.width * 0.5)/_flowLayout.itemSize.width;
+    }else{
+       index = (_collectionView.contentOffset.y + _flowLayout.itemSize.height * 0.5)/_flowLayout.itemSize.height;
+    }
+    
     return index;
 }
+
 
 #pragma mark - collectionView代理方法
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
@@ -108,6 +129,41 @@ static NSString * cellID = @"cycleCell";
     NSString * imageName = self.imageStrArr[itemIndex];
     cell.imageV.image = [UIImage imageNamed:imageName];
     return cell;
+}
+
+-(void)collectionView:(UICollectionView *)collectionView    didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    NSInteger currentIndex = indexPath.item % self.imageStrArr.count;
+    if ([self.delegate respondsToSelector:@selector(cycleScrollView:didSelectItemAtIndex:)]) {
+        [self.delegate cycleScrollView:self didSelectItemAtIndex:currentIndex];
+    }
+}
+
+#pragma mark - scrollView代理方法
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    NSInteger index = [self getCurrentIndex];
+    NSInteger currentPage = index % self.imageStrArr.count;
+    self.pageControl.currentPage = currentPage;
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+    [self invalidateTimer];
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+    [self setupTimer];
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    [self scrollViewDidEndScrollingAnimation:self.collectionView];
+}
+
+-(void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView{
+    NSLog(@"scrollViewDidEndScrollingAnimation");
+    NSInteger index = [self getCurrentIndex];
+    NSInteger currentPage = index % self.imageStrArr.count;
+    if ([self.delegate respondsToSelector:@selector(cycleScrollView:didScrollToIndex:)]) {
+        [self.delegate cycleScrollView:self didScrollToIndex:currentPage];
+    }
 }
 
 @end
